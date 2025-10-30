@@ -37,7 +37,7 @@ body {
 header {
     background: var(--color-fondo);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 15px 0;
+    padding: 10px 0; /* Reducimos padding para el logo */
     position: sticky; 
     top: 0;
     z-index: 100;
@@ -49,11 +49,10 @@ header .container {
     align-items: center;
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--color-principal);
-    text-decoration: none;
+/* AQUÍ ESTÁ EL CAMBIO: Estilo para la imagen del logo */
+header .logo img {
+    max-height: 50px; /* Ajusta este alto (ej. 50px) como veas mejor */
+    width: auto;
 }
 
 header nav {
@@ -86,24 +85,22 @@ header .btn-nav:hover {
 
 /* ======== 2. ÁREA PRINCIPAL (HERO) ======== */
 .hero {
-    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 86, 179, 0.7)), url('https://via.placeholder.com/1500x800.png?text=FOTO+DE+FONDO+DE+LIMPIEZA'); /* Reemplaza 'https://via.placeholder.com' con una foto tuya */
+    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 86, 179, 0.7)), url('https://via.placeholder.com/1500x800.png?text=FOTO+DE+FONDO+DE+LIMPIEZA');
     background-size: cover;
     background-position: center;
     color: var(--color-texto-claro);
     text-align: center;
     padding: 100px 20px;
 }
-
+/* ... (El resto de los estilos del Hero) ... */
 .hero h1 {
     font-size: 48px;
     margin-bottom: 10px;
 }
-
 .hero p {
     font-size: 20px;
     margin-bottom: 30px;
 }
-
 .btn-principal {
     background: var(--color-accion);
     color: var(--color-texto-claro);
@@ -122,14 +119,12 @@ header .btn-nav:hover {
 section {
     padding: 80px 0;
 }
-
 section h2 {
     text-align: center;
     font-size: 36px;
     color: var(--color-principal);
     margin-bottom: 50px;
 }
-
 .bg-ligero {
     background-color: var(--color-fondo-ligero);
 }
@@ -140,7 +135,6 @@ section h2 {
     justify-content: space-around;
     gap: 30px; 
 }
-
 .card {
     background: var(--color-fondo);
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
@@ -149,18 +143,15 @@ section h2 {
     border-radius: 8px;
     flex-basis: 30%; 
 }
-
 .card-icon {
     font-size: 48px;
     color: var(--color-principal);
     margin-bottom: 20px;
 }
-
 .card h3 {
     font-size: 22px;
     margin-bottom: 15px;
 }
-
 .card-ventaja {
     text-align: center;
     padding: 20px;
@@ -176,14 +167,18 @@ section h2 {
     margin-bottom: 10px;
 }
 
-/* ======== NUEVO: GALERÍA ======== */
+/* ======== 4. GALERÍA ======== */
+.subtitulo-galeria {
+    text-align: center;
+    font-size: 18px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
 .galeria-grid {
     display: grid;
-    /* 3 columnas en PC */
     grid-template-columns: repeat(3, 1fr); 
     gap: 15px;
 }
-
 .foto-galeria img {
     width: 100%;
     height: auto;
@@ -202,7 +197,7 @@ section h2 {
     text-align: center;
     padding: 20px;
     border-left: 5px solid var(--color-principal);
-    background: var(--color-fondo); /* Blanco sobre gris */
+    background: var(--color-fondo-ligero);
 }
 .testimonio p {
     font-style: italic;
@@ -212,6 +207,23 @@ section h2 {
 .testimonio cite {
     font-weight: bold;
     color: var(--color-texto);
+}
+
+/* AQUÍ ESTÁ EL CAMBIO: Estilos para la invitación de reseña */
+.invitacion-reseña {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--color-fondo-ligero);
+    border-radius: 8px;
+}
+.invitacion-reseña p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.invitacion-reseña a {
+    color: var(--color-principal);
+    font-weight: bold;
 }
 
 /* ======== 6. SOBRE NOSOTROS ======== */
@@ -226,26 +238,22 @@ section h2 {
 #contacto {
     text-align: center;
 }
-
 #contacto p {
     font-size: 18px;
     max-width: 600px;
     margin: 0 auto 30px auto;
 }
-
 .info-contacto {
     margin-top: 40px;
 }
-
 #contacto .btn-principal {
     display: inline-block;
     margin-bottom: 30px;
-    background-color: #25D366; /* Color oficial de WhatsApp */
+    background-color: #25D366; 
 }
 #contacto .btn-principal:hover {
-    background-color: #128C7E; /* WhatsApp oscuro */
+    background-color: #128C7E;
 }
-
 .contacto-detalle h4 {
     font-size: 22px;
     color: var(--color-principal);
@@ -257,15 +265,13 @@ section h2 {
     font-weight: bold;
 }
 
-
 /* ======== 8. PIE DE PÁGINA (FOOTER) ======== */
 footer {
-    background: #343a40; /* Gris oscuro */
+    background: #343a40; 
     color: var(--color-texto-claro);
     text-align: center;
     padding: 40px 20px;
 }
-
 .redes-sociales a {
     color: var(--color-texto-claro);
     font-size: 24px;
@@ -276,47 +282,34 @@ footer {
 .redes-sociales a:hover {
     color: var(--color-principal);
 }
-
 footer p {
     margin-top: 20px;
     font-size: 14px;
 }
 
-
 /* ======== RESPONSIVE (PARA CELULARES) ======== */
 @media (max-width: 768px) {
-    /* Ajustes generales */
     section h2 {
         font-size: 28px;
     }
-
-    /* Ocultar menú de texto */
     header nav {
         display: none; 
     }
-    /* (Simplificado. Idealmente aquí va un menú hamburguesa con JS) */
-
-    /* Hero */
     .hero h1 {
         font-size: 32px;
     }
     .hero p {
         font-size: 18px;
     }
-
-    /* Las tarjetas (servicios, ventajas) se apilan una sobre otra */
     .card-container {
         flex-direction: column;
     }
-
-    /* Galería se pone en 2 columnas en tablet */
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
-    /* Galería se pone en 1 columna en celular */
     .galeria-grid {
         grid-template-columns: 1fr;
     }
