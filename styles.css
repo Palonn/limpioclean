@@ -1,0 +1,319 @@
+/* ======== CONFIGURACIÓN GLOBAL Y VARIABLES ======== */
+
+/* Usamos un azul como color principal (limpieza) y un verde/amarillo para "Llamada a la Acción" */
+:root {
+    --color-principal: #007bff; /* Azul vibrante */
+    --color-secundario: #0056b3; /* Azul oscuro (para hover) */
+    --color-accion: #28a745; /* Verde (para botones) */
+    --color-fondo: #ffffff;
+    --color-fondo-ligero: #f8f9fa; /* Gris muy claro */
+    --color-texto: #333;
+    --color-texto-claro: #fefefe;
+}
+
+/* Reseteo básico para consistencia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* Para que el scroll al hacer clic en el menú sea suave */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+.container {
+    /* Contenedor centralizado para el contenido */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ======== 1. CABECERA Y NAVEGACIÓN ======== */
+header {
+    background: var(--color-fondo);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky; /* Deja el menú fijo en la parte superior */
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-principal);
+    text-decoration: none;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    color: var(--color-principal);
+}
+
+/* Botón de "Cotiza" en el nav */
+header .btn-nav {
+    background: var(--color-accion);
+    color: var(--color-texto-claro);
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-left: 10px;
+}
+header .btn-nav:hover {
+    background: #218838; /* Verde más oscuro */
+    color: var(--color-texto-claro);
+}
+
+/* ======== 2. ÁREA PRINCIPAL (HERO) ======== */
+.hero {
+    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 86, 179, 0.7)), url('https://via.placeholder.com/1500x800.png?text=FOTO+DE+FONDO+DE+LIMPIEZA'); /* Reemplaza 'https://via.placeholder.com' con una foto tuya */
+    background-size: cover;
+    background-position: center;
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Botón principal (Hero y Contacto) */
+.btn-principal {
+    background: var(--color-accion);
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn-principal:hover {
+    background: #218838; /* Verde más oscuro */
+}
+
+/* ======== 3. SECCIONES (GENERAL) ======== */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 36px;
+    color: var(--color-principal);
+    margin-bottom: 50px;
+}
+
+/* Fondo gris claro alternado */
+.bg-ligero {
+    background-color: var(--color-fondo-ligero);
+}
+
+/* ======== 3. y 4. TARJETAS (Servicios y Ventajas) ======== */
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px; /* Espacio entre tarjetas */
+}
+
+/* Tarjeta de Servicio */
+.card {
+    background: var(--color-fondo);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    flex-basis: 30%; /* Cada tarjeta ocupa ~30% */
+}
+
+.card-icon {
+    font-size: 48px;
+    color: var(--color-principal);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Tarjeta de Ventaja (Por Qué) */
+.card-ventaja {
+    text-align: center;
+    padding: 20px;
+    flex-basis: 30%;
+}
+.card-ventaja i {
+    font-size: 40px;
+    color: var(--color-accion);
+    margin-bottom: 15px;
+}
+.card-ventaja h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* ======== 5. TESTIMONIOS ======== */
+.testimonio {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    padding: 20px;
+    border-left: 5px solid var(--color-principal);
+    background: var(--color-fondo-ligero);
+}
+.testimonio p {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.testimonio cite {
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+/* ======== 6. SOBRE NOSOTROS ======== */
+#nosotros p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ======== 7. CONTACTO ======== */
+#contacto {
+    text-align: center;
+}
+
+#contacto p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.info-contacto {
+    margin-top: 40px;
+}
+
+/* Botón de WhatsApp */
+#contacto .btn-principal {
+    display: inline-block;
+    margin-bottom: 30px;
+    background-color: #25D366; /* Color oficial de WhatsApp */
+}
+#contacto .btn-principal:hover {
+    background-color: #128C7E; /* WhatsApp oscuro */
+}
+
+.contacto-detalle h4 {
+    font-size: 24px;
+    color: var(--color-principal);
+    margin: 10px 0;
+}
+.contacto-detalle a {
+    color: var(--color-principal);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ======== 8. PIE DE PÁGINA (FOOTER) ======== */
+footer {
+    background: #343a40; /* Gris oscuro */
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.redes-sociales a {
+    color: var(--color-texto-claro);
+    font-size: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.redes-sociales a:hover {
+    color: var(--color-principal);
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+footer p a {
+    color: var(--color-texto-claro);
+}
+
+
+/* ======== RESPONSIVE (PARA CELULARES) ======== */
+@media (max-width: 768px) {
+    /* Ajustes generales */
+    body {
+        font-size: 16px;
+    }
+    section h2 {
+        font-size: 28px;
+    }
+
+    /* Ocultar menú de texto y mostrar menú de hamburguesa (requiere JS, así que lo simplificamos) */
+    header nav {
+        /* Por simplicidad, solo haremos que se apilen */
+        /* Idealmente, aquí se esconde el nav y se muestra un icono de hamburguesa */
+        flex-direction: column;
+        width: 100%;
+        display: none; /* Ocultamos nav para simplificar el código sin JS */
+    }
+    header .btn-nav {
+        display: none; /* Ocultamos el botón del nav en móvil */
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+
+    /* Las tarjetas (servicios, ventajas) se apilan una sobre otra */
+    .card-container {
+        flex-direction: column;
+    }
+
+    /* Ajustar padding para secciones */
+    section {
+        padding: 50px 0;
+    }
+}
