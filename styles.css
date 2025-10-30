@@ -1,6 +1,4 @@
 /* ======== CONFIGURACIÓN GLOBAL Y VARIABLES ======== */
-
-/* Usamos un azul como color principal (limpieza) y un verde/amarillo para "Llamada a la Acción" */
 :root {
     --color-principal: #007bff; /* Azul vibrante */
     --color-secundario: #0056b3; /* Azul oscuro (para hover) */
@@ -19,7 +17,6 @@
 }
 
 html {
-    /* Para que el scroll al hacer clic en el menú sea suave */
     scroll-behavior: smooth;
 }
 
@@ -31,7 +28,6 @@ body {
 }
 
 .container {
-    /* Contenedor centralizado para el contenido */
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
@@ -42,7 +38,7 @@ header {
     background: var(--color-fondo);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 15px 0;
-    position: sticky; /* Deja el menú fijo en la parte superior */
+    position: sticky; 
     top: 0;
     z-index: 100;
 }
@@ -76,7 +72,6 @@ header nav a:hover {
     color: var(--color-principal);
 }
 
-/* Botón de "Cotiza" en el nav */
 header .btn-nav {
     background: var(--color-accion);
     color: var(--color-texto-claro);
@@ -85,7 +80,7 @@ header .btn-nav {
     margin-left: 10px;
 }
 header .btn-nav:hover {
-    background: #218838; /* Verde más oscuro */
+    background: #218838; 
     color: var(--color-texto-claro);
 }
 
@@ -109,7 +104,6 @@ header .btn-nav:hover {
     margin-bottom: 30px;
 }
 
-/* Botón principal (Hero y Contacto) */
 .btn-principal {
     background: var(--color-accion);
     color: var(--color-texto-claro);
@@ -121,7 +115,7 @@ header .btn-nav:hover {
     transition: background-color 0.3s ease;
 }
 .btn-principal:hover {
-    background: #218838; /* Verde más oscuro */
+    background: #218838;
 }
 
 /* ======== 3. SECCIONES (GENERAL) ======== */
@@ -136,7 +130,6 @@ section h2 {
     margin-bottom: 50px;
 }
 
-/* Fondo gris claro alternado */
 .bg-ligero {
     background-color: var(--color-fondo-ligero);
 }
@@ -145,17 +138,16 @@ section h2 {
 .card-container {
     display: flex;
     justify-content: space-around;
-    gap: 30px; /* Espacio entre tarjetas */
+    gap: 30px; 
 }
 
-/* Tarjeta de Servicio */
 .card {
     background: var(--color-fondo);
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     padding: 30px;
     text-align: center;
     border-radius: 8px;
-    flex-basis: 30%; /* Cada tarjeta ocupa ~30% */
+    flex-basis: 30%; 
 }
 
 .card-icon {
@@ -169,7 +161,6 @@ section h2 {
     margin-bottom: 15px;
 }
 
-/* Tarjeta de Ventaja (Por Qué) */
 .card-ventaja {
     text-align: center;
     padding: 20px;
@@ -185,6 +176,25 @@ section h2 {
     margin-bottom: 10px;
 }
 
+/* ======== NUEVO: GALERÍA ======== */
+.galeria-grid {
+    display: grid;
+    /* 3 columnas en PC */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+}
+
+.foto-galeria img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.foto-galeria img:hover {
+    transform: scale(1.05);
+}
+
 /* ======== 5. TESTIMONIOS ======== */
 .testimonio {
     max-width: 700px;
@@ -192,7 +202,7 @@ section h2 {
     text-align: center;
     padding: 20px;
     border-left: 5px solid var(--color-principal);
-    background: var(--color-fondo-ligero);
+    background: var(--color-fondo); /* Blanco sobre gris */
 }
 .testimonio p {
     font-style: italic;
@@ -227,7 +237,6 @@ section h2 {
     margin-top: 40px;
 }
 
-/* Botón de WhatsApp */
 #contacto .btn-principal {
     display: inline-block;
     margin-bottom: 30px;
@@ -238,7 +247,7 @@ section h2 {
 }
 
 .contacto-detalle h4 {
-    font-size: 24px;
+    font-size: 22px;
     color: var(--color-principal);
     margin: 10px 0;
 }
@@ -272,32 +281,20 @@ footer p {
     margin-top: 20px;
     font-size: 14px;
 }
-footer p a {
-    color: var(--color-texto-claro);
-}
 
 
 /* ======== RESPONSIVE (PARA CELULARES) ======== */
 @media (max-width: 768px) {
     /* Ajustes generales */
-    body {
-        font-size: 16px;
-    }
     section h2 {
         font-size: 28px;
     }
 
-    /* Ocultar menú de texto y mostrar menú de hamburguesa (requiere JS, así que lo simplificamos) */
+    /* Ocultar menú de texto */
     header nav {
-        /* Por simplicidad, solo haremos que se apilen */
-        /* Idealmente, aquí se esconde el nav y se muestra un icono de hamburguesa */
-        flex-direction: column;
-        width: 100%;
-        display: none; /* Ocultamos nav para simplificar el código sin JS */
+        display: none; 
     }
-    header .btn-nav {
-        display: none; /* Ocultamos el botón del nav en móvil */
-    }
+    /* (Simplificado. Idealmente aquí va un menú hamburguesa con JS) */
 
     /* Hero */
     .hero h1 {
@@ -312,8 +309,15 @@ footer p a {
         flex-direction: column;
     }
 
-    /* Ajustar padding para secciones */
-    section {
-        padding: 50px 0;
+    /* Galería se pone en 2 columnas en tablet */
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Galería se pone en 1 columna en celular */
+    .galeria-grid {
+        grid-template-columns: 1fr;
     }
 }
