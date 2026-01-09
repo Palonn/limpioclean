@@ -3,130 +3,971 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LimpioClean | Lavado de Salas y Alfombras en Guadalajara</title>
+    <title>LimpioClean | Limpieza Profesional de Salas y Alfombras en Guadalajara</title>
+    <meta name="description" content="Servicio profesional de lavado de salas y alfombras a domicilio en Guadalajara. Cotización gratis, resultados garantizados.">
     
-    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧹</text></svg>">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --primary-dark: #0d5bb5;
+            --secondary-color: #34a853;
+            --accent-color: #fbbc05;
+            --dark-color: #202124;
+            --light-color: #f8f9fa;
+            --gray-color: #5f6368;
+            --light-gray: #e8eaed;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-img img {
+            height: 60px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .btn-nav {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+        }
+        
+        .btn-nav:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-nav::after {
+            display: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 160px 0 100px;
+            margin-top: 90px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn-principal {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-principal:hover {
+            background-color: #e6a904;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Servicios */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        #servicios {
+            padding: 80px 0;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .card-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .card p {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        
+        .card ul {
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 20px;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .card li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .card li:before {
+            content: "✓";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+        
+        /* Galería */
+        .bg-ligero {
+            background-color: var(--light-color);
+        }
+        
+        #galeria {
+            padding: 80px 0;
+        }
+        
+        .subtitulo-galeria {
+            text-align: center;
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .foto-galeria {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 250px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .foto-galeria:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .foto-galeria img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .foto-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonios */
+        #testimonios {
+            padding: 80px 0;
+        }
+        
+        .testimonio-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonio {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .testimonio p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray-color);
+        }
+        
+        .testimonio cite {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-style: normal;
+        }
+        
+        .stars {
+            margin-top: 15px;
+            color: var(--accent-color);
+        }
+        
+        .invitacion-reseña {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .invitacion-reseña a {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .invitacion-reseña a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Nosotros */
+        #nosotros {
+            padding: 80px 0;
+        }
+        
+        .nosotros-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .nosotros-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+        
+        .valores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .valor-item {
+            padding: 20px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .valor-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Contacto */
+        #contacto {
+            padding: 80px 0;
+        }
+        
+        .info-contacto {
+            max-width: 800px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+        
+        .contacto-detalle {
+            margin-top: 40px;
+            padding: 30px;
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+        }
+        
+        .contacto-detalle h4 {
+            margin-top: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .contacto-detalle a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .contacto-detalle a:hover {
+            text-decoration: underline;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: var(--white) !important;
+            padding: 18px 35px;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #1da851;
+            color: var(--white);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .redes-sociales a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .redes-sociales a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.9rem;
+            }
+            
+            .logo-text {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero {
+                padding: 140px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            #servicios, #galeria, #testimonios, #nosotros, #contacto {
+                padding: 60px 0;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .logo-img img {
+                height: 50px;
+            }
+            
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-principal {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+            
+            .whatsapp-btn {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+            
+            .logo-img img {
+                height: 45px;
+            }
+        }
+        
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        /* Logo alternativo si falla la imagen */
+        .logo-alt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-
+    <!-- Header -->
     <header>
         <div class="container">
             <a href="#" class="logo">
-                <img src="images/limpiologo.png" alt="LimpioClean Logo Guadalajara">
+                <div class="logo-img">
+                    <!-- Logo desde Facebook CDN -->
+                    <img id="main-logo" src="https://scontent.fgdl1-4.fna.fbcdn.net/v/t39.30808-6/499783327_122108629562863685_1986248406357935115_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=5-I83YkVXboQ7kNvwFjwkkE&_nc_oc=Adkdl3c0ukxgTZUF59iYl_HzZA6zbw_k6P6fM2JhhNoCE8rXqFB-HKfSb7R2T4iVj62EStIVgPUbBWWg5g44LH2s&_nc_zt=23&_nc_ht=scontent.fgdl1-4.fna&_nc_gid=fzoBjZZqAvPpfajPfQ_eug&oh=00_AfquSDW2ArlqZnJhWvQ20qBN5rPD_-eJdJRWQfDEdXW7KA&oe=69664194" alt="LimpioClean Logo - Limpieza profesional en Guadalajara" 
+                         onerror="this.onerror=null; this.style.display='none'; document.getElementById('backup-logo').style.display='flex';">
+                    <!-- Logo de respaldo -->
+                    <div id="backup-logo" class="logo-alt" style="display: none;">
+                        LC
+                    </div>
+                </div>
+                <div>
+                    <div class="logo-text">LimpioClean</div>
+                    <div class="logo-subtitle">Limpieza Profesional en Guadalajara</div>
+                </div>
             </a>
             
             <nav>
                 <a href="#servicios">Servicios</a>
                 <a href="#galeria">Galería</a>
                 <a href="#nosotros">Nosotros</a>
+                <a href="#testimonios">Testimonios</a>
                 <a href="#contacto" class="btn-nav">¡Cotiza Ya!</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Especialistas en Lavado Profundo a Domicilio</h1>
-                <p>Servicios profesionales de limpieza de salas, alfombras y autos en Guadalajara, Jal.</p>
-                <a href="#contacto" class="btn-principal">¡Pide tu cotización gratis!</a>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container fade-in">
+            <h1>Especialistas en Limpieza Profunda de Salas y Alfombras</h1>
+            <p>Servicio profesional a domicilio en Guadalajara y área metropolitana. Eliminamos manchas, ácaros y malos olores con técnicas avanzadas y productos de alta calidad.</p>
+            <a href="#contacto" class="btn-principal">¡Solicita tu cotización gratis!</a>
+        </div>
+    </section>
 
-        <section id="servicios" class="container">
-            <h2>Nuestros Servicios</h2>
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-couch"></i></div>
-                    <h3>Lavado de Salas</h3>
-                    <p>Eliminamos manchas, ácaros y malos olores con inyección y succión profunda. Tus salas como nuevas.</p>
+    <!-- Servicios -->
+    <section id="servicios" class="container">
+        <h2 class="section-title">Nuestros Servicios Especializados</h2>
+        <div class="card-container">
+            <div class="card fade-in">
+                <div class="card-icon"><i class="fas fa-couch"></i></div>
+                <h3>Lavado Profundo de Salas</h3>
+                <p>Transformamos tus muebles con nuestro sistema de inyección-succión que elimina suciedad incrustada, ácaros, bacterias y alérgenos.</p>
+                <ul>
+                    <li>Eliminación de manchas difíciles</li>
+                    <li>Desinfección completa</li>
+                    <li>Recuperación de colores originales</li>
+                    <li>Eliminación de malos olores</li>
+                </ul>
+            </div>
+            
+            <div class="card fade-in">
+                <div class="card-icon"><i class="fas fa-rug"></i></div>
+                <h3>Lavado de Alfombras y Tapetes</h3>
+                <p>Revivimos la belleza de tus alfombras con limpieza profunda que remueve tierra, polvo y contaminantes sin dañar las fibras.</p>
+                <ul>
+                    <li>Alfombras de área y corredores</li>
+                    <li>Tapetes persas y delicados</li>
+                    <li>Protección anti-manchas</li>
+                    <li>Secado rápido y eficiente</li>
+                </ul>
+            </div>
+            
+            <div class="card fade-in">
+                <div class="card-icon"><i class="fas fa-bed"></i></div>
+                <h3>Limpieza de Colchones</h3>
+                <p>Mejora tu calidad de sueño con nuestra limpieza profunda de colchones que elimina ácaros, bacterias y alérgenos.</p>
+                <ul>
+                    <li>Eliminación de ácaros (99%)</li>
+                    <li>Desinfección bacteriológica</li>
+                    <li>Eliminación de olores</li>
+                    <li>Protección anti-ácaros</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="bg-ligero">
+        <div class="container">
+            <h2 class="section-title">Transformamos Tus Espacios</h2>
+            <p class="subtitulo-galeria">Resultados visibles que hablan por sí mismos. Mira la diferencia entre un antes y después real:</p>
+            
+            <div class="galeria-grid">
+                <div class="foto-galeria fade-in">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sala limpia y renovada profesionalmente">
+                    <div class="foto-label">Sala renovada</div>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-rug"></i></div>
-                    <h3>Lavado de Alfombras</h3>
-                    <p>Lavado profundo para alfombras y tapetes. Revivimos los colores y la textura de tus espacios.</p>
+                <div class="foto-galeria fade-in">
+                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Alfombra después de limpieza profunda">
+                    <div class="foto-label">Alfombra restaurada</div>
                 </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-car"></i></div>
-                    <h3>Lavado de Autos</h3>
-                    <p>Limpieza profunda de interiores y vestiduras. Dejamos tu auto impecable por dentro.</p>
+                <div class="foto-galeria fade-in">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Colchón limpio y desinfectado">
+                    <div class="foto-label">Colchón desinfectado</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="container">
+        <h2 class="section-title">Testimonios de Clientes Satisfechos</h2>
         
-        <section id="galeria" class="bg-ligero">
-            <div class="container">
-                <h2>Galería de Trabajos (Antes y Después)</h2>
-                <p class="subtitulo-galeria">Puedes usar tu otra imagen 'Limpio clean.png' aquí, o fotos de tus trabajos.</p>
-                <div class="galeria-grid">
-                    <div class="foto-galeria">
-                        <img src="https://via.placeholder.com/400x300.png?text=ANTES+(Sala)" alt="Trabajo Antes">
-                    </div>
-                    <div class="foto-galeria">
-                        <img src="https://via.placeholder.com/400x300.png?text=DESPUÉS+(Sala)" alt="Trabajo Después">
-                    </div>
-                    <div class="foto-galeria">
-                        <img src="https://via.placeholder.com/400x300.png?text=ANTES+(Alfombra)" alt="Trabajo Antes">
-                    </div>
+        <div class="testimonio-container">
+            <div class="testimonio fade-in">
+                <p>"Tenía una mancha de vino tinto en mi sala blanca que pensé era permanente. Los chicos de LimpioClean la eliminaron por completo. Increíble servicio y muy profesionales."</p>
+                <cite>– Laura Mendoza, Col. Providencia</cite>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
             </div>
-        </section>
-
-        <section id="testimonios" class="container">
-             <div class="container">
-                <h2>Lo que dicen nuestros clientes</h2>
-                <div class="testimonio">
-                    <p>"¡Excelente servicio de limpieza! Mis alfombras lucen como nuevas. ¡Gracias, Limpio Clean!"</p>
-                    <cite>– María Fernández</cite>
+            
+            <div class="testimonio fade-in">
+                <p>"Mis alfombras tenían años sin limpiarse por miedo a que se encogieran o destiñeran. LimpioClean las dejó espectaculares, como nuevas. Muy cuidadosos y puntuales."</p>
+                <cite>– Carlos Ramírez, Zapopan</cite>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
-                <div class="testimonio">
-                    <p>"Muy profesionales y puntuales. ¡Recomendaría sus servicios a cualquiera!"</p>
-                    <cite>– Juan Pérez</cite>
-                </div>
-
-                <div class="invitacion-reseña">
-                    <p><b>¿Te gustó nuestro servicio?</b></p>
-                    <p>¡Mándanos tu reseña por <a href="#contacto">WhatsApp</a> y con gusto la publicaremos aquí!</p>
-                </div>
-             </div>
-        </section>
-
-        <section id="nosotros" class="bg-ligero">
-            <div class="container">
-                <h2>Nuestra Historia</h2>
-                <p>Limpio Clean es una empresa líder ubicada en Guadalajara, especializada en el lavado profundo de salas, alfombras y automóviles. Destacamos por nuestra experiencia en el sector y nuestro compromiso con la calidad, lo que nos distingue en el mercado de la limpieza. Nuestros servicios a domicilio y productos garantizan resultados impecables.</p>
             </div>
-        </section>
+            
+            <div class="testimonio fade-in">
+                <p>"Excelente servicio de limpieza de colchones. Mi hijo tiene alergias y desde que limpiaron sus colchones ha dormido mucho mejor. 100% recomendados."</p>
+                <cite>– Patricia Soto, Guadalajara Centro</cite>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="invitacion-reseña fade-in">
+            <p><b>¿Te gustó nuestro servicio?</b></p>
+            <p>¡Comparte tu experiencia y obtén un <strong>15% de descuento</strong> en tu próximo servicio! Envíanos tu reseña por <a href="https://wa.me/523311763945?text=Hola%20LimpioClean,%20quiero%20compartir%20mi%20experiencia%20y%20solicitar%20el%20descuento">WhatsApp</a>.</p>
+        </div>
+    </section>
 
-        <section id="contacto" class="container">
-            <div class="container">
-                <h2>Agenda tu Servicio Hoy</h2>
-                <p>Estamos en Guadalajara, Jal. Escríbenos directamente a nuestro chat de WhatsApp para una cotización inmediata.</p>
+    <!-- Nosotros -->
+    <section id="nosotros" class="bg-ligero">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegir LimpioClean?</h2>
+            
+            <div class="nosotros-content">
+                <p class="fade-in"><strong>LimpioClean</strong> es una empresa 100% mexicana con más de 5 años de experiencia especializada en limpieza profunda de salas, alfombras y colchones en Guadalajara y área metropolitana.</p>
                 
-                <div class="info-contacto">
-                    <a href="https://wa.me/5213333985813?text=Hola%20LimpioClean,%20quisiera%20una%20cotización%20de%20limpieza." class="btn-principal" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Chatea con Nosotros (33-3398-5813)
-                    </a>
-                    <div class="contacto-detalle">
-                        <p>O escríbenos a:</p>
-                        <h4><a href="mailto:limpioclean0@gmail.com">limpioclean0@gmail.com</a></h4>
+                <p class="fade-in">Nos diferenciamos por nuestro compromiso con la calidad, el uso de tecnología de punta y productos ecológicos que garantizan resultados excepcionales sin dañar tus muebles ni el medio ambiente.</p>
+                
+                <div class="valores">
+                    <div class="valor-item fade-in">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Garantía de Satisfacción</h4>
+                        <p>Si no estás satisfecho, rehacemos el servicio sin costo adicional.</p>
+                    </div>
+                    
+                    <div class="valor-item fade-in">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Productos Ecológicos</h4>
+                        <p>Utilizamos detergentes biodegradables y amigables con el ambiente.</p>
+                    </div>
+                    
+                    <div class="valor-item fade-in">
+                        <i class="fas fa-clock"></i>
+                        <h4>Puntualidad Garantizada</h4>
+                        <p>Llegamos a la hora acordada o te aplicamos un 10% de descuento.</p>
+                    </div>
+                    
+                    <div class="valor-item fade-in">
+                        <i class="fas fa-tools"></i>
+                        <h4>Equipo Profesional</h4>
+                        <p>Técnicos certificados con equipo industrial de última generación.</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacta a Nuestros Especialistas</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: var(--gray-color);" class="fade-in">Cotización gratuita sin compromiso. Resolvemos tus dudas en menos de 5 minutos.</p>
+            
+            <div class="info-contacto">
+                <a href="https://wa.me/523311763945?text=Hola%20LimpioClean,%20quisiera%20una%20cotización%20para%20limpieza%20de%20sala/alfombra/colchón." class="btn-principal whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp: 33 1176 3945
+                </a>
+                
+                <p style="margin: 15px 0; font-size: 0.9rem; color: var(--gray-color);">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> También puedes llamarnos al mismo número
+                </p>
+                
+                <div class="contacto-detalle fade-in">
+                    <p>O escríbenos a nuestro correo electrónico:</p>
+                    <h4><a href="mailto:limpioclean0@gmail.com">limpioclean0@gmail.com</a></h4>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Visita nuestro sitio web: <a href="https://limpioclean.com.mx" target="_blank">limpioclean.com.mx</a></p>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 25px; background: var(--light-gray); border-radius: var(--border-radius);" class="fade-in">
+                    <h3 style="margin-bottom: 15px; color: var(--dark-color);">Áreas de Servicio en Guadalajara</h3>
+                    <p>Atendemos en toda el área metropolitana: Guadalajara, Zapopan, Tlaquepaque, Tonalá, Tlajomulco, El Salto y municipios aledaños.</p>
+                    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+                        <span style="background: var(--white); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📍 Guadalajara Centro</span>
+                        <span style="background: var(--white); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📍 Zapopan</span>
+                        <span style="background: var(--white); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📍 Tlaquepaque</span>
+                        <span style="background: var(--white); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem;">📍 Tonalá</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9rem;"><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 8px;"></i> Horario de atención: Lunes a Sábado de 8:00 AM a 7:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="redes-sociales">
-                <a href="https://www.facebook.com/share/163hXJMf1v/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/limpi0_clean/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/163hXJMf1v/" target="_blank" aria-label="Facebook LimpioClean"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/limpi0_clean/" target="_blank" aria-label="Instagram LimpioClean"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/523311763945" target="_blank" aria-label="WhatsApp LimpioClean"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <p>&copy; 2025 LimpioClean. Creado con ❤️ en Guadalajara, Jalisco.</p>
+            
+            <p>&copy; 2024 LimpioClean. Todos los derechos reservados.</p>
+            <p>Especialistas en limpieza profunda de salas y alfombras en Guadalajara, Jalisco.</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">LimpioClean.com.mx | Tel: 33 1176 3945 | Email: limpioclean0@gmail.com</p>
         </div>
     </footer>
 
+    <script>
+        // Animación de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animaciones
+        document.querySelectorAll('.card, .foto-galeria, .testimonio, .invitacion-reseña, .nosotros-content p, .valor-item, #contacto p, #contacto .contacto-detalle').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Añadir clase fade-in a elementos después de cargar
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.card, .foto-galeria, .valor-item').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.15}s`;
+            });
+            
+            // Verificar si el logo cargó correctamente
+            const logo = document.getElementById('main-logo');
+            if (logo && logo.complete && logo.naturalHeight === 0) {
+                // Logo falló, mostrar respaldo
+                logo.style.display = 'none';
+                document.getElementById('backup-logo').style.display = 'flex';
+            }
+        });
+        
+        // Función para probar el logo
+        function testLogo() {
+            const logo = document.getElementById('main-logo');
+            if (logo && logo.complete) {
+                if (logo.naturalHeight === 0) {
+                    console.log("Logo no cargó, mostrando respaldo");
+                    logo.style.display = 'none';
+                    document.getElementById('backup-logo').style.display = 'flex';
+                } else {
+                    console.log("Logo cargado correctamente");
+                }
+            }
+        }
+        
+        // Probar el logo después de 2 segundos
+        setTimeout(testLogo, 2000);
+    </script>
 </body>
 </html>
